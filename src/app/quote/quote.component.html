@@ -1,47 +1,35 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="container"><!--full page-->
+  <div>
+    <div class="col-md-12">
+      <div class="text-center">
+        <h1>Quotes Hub</h1>
+        <h4>Let's get inspired</h4>
+        <hr>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <div class="col-md-12">
-    <div class="text-center">
-      <h1>Quotes Hub</h1>
-      <h4>Let's get inspired</h4>
-      <hr>
+  <div class="container">
+    <div class="row"><!--major container-->
+      <div class="col-md-6"><!--quotes form-->
+        <app-quote-form></app-quote-form>
+      </div>
+      <div class="col-md-6"><!--display quotes-->
+        <ul>
+          <div *ngFor="let quote of quotes; let i = index">
+            <li>By: {{ quote.by }}, due on {{ quote.completeDate | date | uppercase }} {{ quote.author }}</li><br>
+            <button><i class="fas fa-thumbs-up" aria-hidden="true" (click)="likeButton()">{{ quote.numberOfLike }}</i></button>
+            <button><i class="fas fa-thumbs-down" aria-hidden="true" (click)="dislikeButton()">{{ quote.numberOfDislike }}</i></button>
+            <button class="btn btn-link" (click)="toggleDetails(i)">ToggleDetails</button><br>
+            <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details><br>
+            <button class="btn btn-danger" (click)="QuoteDelete(i)">Delete</button>
+          </div>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <hr>
-      <ul>
-        <div *ngFor="let quote of quotes; let i = index">
-          <p appHighlight *ngIf="highestUpvote()===quote.numberOfLikes && quote.numberOfLikes>0">{{quote.theQuote}}</p>
-          <p *ngIf="highestUpvote()!==quote.numberOfLikes || quote.numberOfLikes===0">{{quote.theQuote}}</p>
-          <div class="likes">
-            <li>
-              {{ quote.author }} , submitted by {{ quote.submittedBy }} due on
-              {{ quote.completeDate | date | uppercase }}
-            </li>
-            <br>
-            <i class="fa fa-thumbs-up bg-success" aria-hidden="true" (click)="likeButtonClick()"></i>
-            <i class="fa fa-thumbs-down ml-5 bg-danger"  aria-hidden="true" (click)="dislikeButtonClick()"></i>
-            <br>
-            <p><strong>Likes:</strong>{{quote.numberOfLikes}} <span><strong>Dislikes:</strong>{{quote.numberOfDislikes}}</span></p>
-          </div>
-          <br>
-          <button (click)="toggleDetails(i)">Toggle Details</button>
-          <br>
-          <app-quotes-details *ngIf="quote.showDescription" [quote]="quote"></app-quotes-details> 
-          <br>
-          <button (click)="quoteDelete(i)" class="btn btn-outline-danger">Delete Quote</button><br>
-        </div>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <app-quotes-form (addQuotes)="addNewQuote($event)"></app-quotes-form>
-    </div>
-  </div>
-</div> -->
