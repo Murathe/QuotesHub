@@ -29,7 +29,6 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote)
   }
 
-
   likeButton(){
     this.numberOfLike = this.numberOfLike + 1;
   }
