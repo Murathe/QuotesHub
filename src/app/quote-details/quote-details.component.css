@@ -1,0 +1,9 @@
+#main{
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+
+#dueOn{
+    font-style: italic;
+}

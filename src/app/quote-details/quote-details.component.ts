@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Quote } from '@angular/compiler';
+// import { Quote } from '@angular/compiler';
 import { Quote } from '../quote';
 
 
@@ -23,3 +23,4 @@ export class QuoteDetailsComponent implements OnInit {
   }
 
 }
+

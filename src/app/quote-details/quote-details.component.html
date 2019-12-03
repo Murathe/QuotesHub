@@ -1,7 +1,9 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
 <div class="details">
-    <p>{{quote.description}}</p>
-    <p>This quote will be complete in {{quote.completeDate|dateCount}} days</p>
-    </div>
+    <p id="main"> {{ quote.author }}: <br>{{quote.quote}}</p>
+    <p id="dueOn">This quote will be complete in {{quote.completeDate|dateCount}} days</p>
+</div>
     
     
     

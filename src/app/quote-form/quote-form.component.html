@@ -1,15 +1,18 @@
 
-<form>
+<form #quoteForm='ngForm' (ngSubmit)="addQuotee()">
     <h3 class="text-center">Post a quote</h3>
     <hr>
     <div class="form-group">
       <input type="text" placeholder="Your name" name="name" class="form-control" id="name" required [(ngModel)]="newQuote.name" #name="ngModel">
-      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
         <p>You better feed me</p>
       </div>
     </div>
     <div class="form-group">
       <textarea type="text" placeholder="Quote" rows="6" name="quote" class="form-control" id="quote" required [(ngModel)]="newQuote.quote" #quote="ngModel"></textarea>
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+          <p>What did they say?</p>
+        </div>
     </div>
     <div class="form-group">
       <input type="text" placeholder="Authored by" name="author" class="form-control" id="author" required [(ngModel)]="newQuote.author" #author="ngModel">
@@ -18,12 +21,12 @@
       </div>
     </div>
     <div class="form-group">
-      <input type="date" name="completeDate" id="date" required [(ngModel)]="newQuote.completeDate" #completeDate="ngModel">
+      <input type="date" name="completeDate" id="date" [(ngModel)]="newQuote.completeDate" #completeDate="ngModel">
       <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
         <p>The date please.</p>
       </div>
     </div>
     <div>
-      <button type="button" class="btn btn-info">Post</button>
+      <button type="submit" class="btn btn-info">Post</button>
     </div>
   </form>
