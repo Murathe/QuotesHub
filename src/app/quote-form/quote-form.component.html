@@ -3,7 +3,7 @@
     <h3 class="text-center">Post a quote</h3>
     <hr>
     <div class="form-group">
-      <input type="text" placeholder="Your name" name="name" class="form-control" id="name" required [(ngModel)]="newQuote.name" #name="ngModel">
+      <input type="text" placeholder="Your name" name="by" class="form-control" id="name" required [(ngModel)]="newQuote.by" #name="ngModel">
       <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
         <p>You better feed me</p>
       </div>
@@ -27,6 +27,6 @@
       </div>
     </div>
     <div>
-      <button type="submit" class="btn btn-info">Post</button>
+      <button type="submit" class="btn btn-info" [disabled]="!quoteForm.form.valid">Post</button>
     </div>
   </form>
