@@ -1,6 +1,34 @@
-# Quotes
+# Project Name.
+- Quotes Hub
+# Author.
+**Murathe Isaac**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+## Description
+An angular app where one can post a quote and have a real time observation of the likes/dislikes from other community members.
+
+| Inputs.                  | Description.                                            |
+|--------------------------|---------------------------------------------------------|
+| Your Name                | Posting the quote                                       |
+|                          |                                                         |
+| Quote                    | Fav quote.                                              |
+|                          |                                                         |
+| Author                   |Credits of the original author.                          |
+|                          |                                                         |
+| **Behaviour**            | **Description**                                         |
+|                          |                                                         |
+| Click Quote              | Post your name and quote details                        |
+|                          |                                                         |
+| Click Toggle details     | To view when posted and author                          |                                        |                          |                                                         |
+| Click delete             | To delete a quote                                       |
+|                          |                                                         |
+| click thumb up/down      | To like or dislike a quote                              |
+
+
+##Technologies used
+- Angular 
+- Bootstrap
+- HTML
+
 
 ## Development server
 
@@ -22,6 +50,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+License
+The MIT license
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) Murathe @2019
+
+
+
