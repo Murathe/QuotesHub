@@ -6,3 +6,12 @@ h1{
 font-family: 'Berkshire Swash', cursive;
 font-size: 15vh;
 }
+
+.details{
+    background-color: pink;
+    list-style: none;
+    padding: 2% 2% 10% 10%;
+    border-radius: 30px;
+    margin-top: 5%;
+    text-align: center;
+}

@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
 <div class="details">
-    <p id="main"> {{ quote.author }}: <br>{{quote.quote}}</p>
-    <p id="dueOn">This quote will be complete in {{quote.completeDate|dateCount}} days</p>
+    <p id="main"> {{ quote.author }}: <br>{{ quote.quote}}</p>
+    <p id="dueOn">Posted {{quote.complete | amTimeAgo}} </p>
 </div>
     
     

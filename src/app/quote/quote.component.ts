@@ -9,12 +9,21 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1, 'We often need less than we think we needs', 'Maya Angelou', 'Alicia', new Date(2019, 12, 12),0,0),
-    new Quote(2, 'When someone shows you whom they are, believe them the first time only', 'Maya Angelou', 'Eve', new Date(2019, 10, 12),0,0),
+    new Quote(1, 'We often need less than we think we needs', 'Maya Angelou', 'Alicia', new Date(2019, 5, 5), 0, 0),
+    new Quote(2, 'When someone shows you whom they are, believe them the first time only', 'Maya Angelou', 'Eve', new Date(2019, 11, 5), 0, 0)
   ]
 
-  numberOfLike = 0;
-  numberOfDislike = 0;
+  likeNo = 0;
+  dislikeNo = 0;
+
+  like(index){
+    this.quotes[index].likeNo+=1;
+  }
+
+  dislike(index){
+    this.quotes[index].dislikeNo+=1;
+  }
+
   
   QuoteDelete(index){
     this.quotes.splice(index, 1)
@@ -25,16 +34,8 @@ export class QuoteComponent implements OnInit {
   }
 
   addNewQuote(quote){
-    quote.completeDate = new Date(quote.completeDate)
+    quote.complete = new Date(quote.complete)
     this.quotes.push(quote)
-  }
-
-  likeButton(){
-    this.numberOfLike = this.numberOfLike + 1;
-  }
-
-  dislikeButton(){
-    this.numberOfDislike = this.numberOfDislike + 1;
   }
 
   constructor() { }
